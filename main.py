@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Entry: Duckling in a Rain Hat
+# Approach: Deterministic file copy from assets/entry.jpg to /output/entry.png with strict output validation.
 import os
 import sys
 import hashlib
@@ -20,7 +22,7 @@ def main():
         
     file_size = os.path.getsize(dst_path)
     if not (0 < file_size < 1048576):
-        print(f"Error: Output file size {file_size} is invalid (must be > 0 and < 1048576).", file=sys.stderr)
+        print(f"Error: Output file size {file_size} bytes is invalid (must be > 0 and < 1048576 bytes).", file=sys.stderr)
         sys.exit(1)
         
     with open(dst_path, "rb") as f:
